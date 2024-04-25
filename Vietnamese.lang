@@ -1,0 +1,213 @@
+# phiên bản 1)
+# Chào mừng bạn đến với tập tin ngôn ngữ của Clearlag! Tại đây, bạn có thể sửa đổi các chuỗi khác nhau mà ClearLag sử dụng cho phù hợp với ngôn ngữ hoặc sở thích của bạn
+# -- LƯU Ý: Đây là định dạng: '<key>({replaceables}...):<message>'
+# -- LƯU Ý: Các khóa có thể thay thế được thay thế tùy theo thứ tự, không phải tên khóa thực tế. Vì vậy, bạn cũng có thể tùy chỉnh tên khóa!
+# -- LƯU Ý: Ký hiệu { ... } đại diện cho một khối thông báo. Điều này có thể áp dụng ở bất kỳ đâu bạn muốn... Không bao gồm bất kỳ ký tự nào có { hoặc }
+
+####----> Lệnh -->
+command.error.wrongUsage({usage},{name})=&cSử dụng sai: &8/&7lagg {name} {usage}
+command.error.noPermission({name})=&cBạn không có quyền sử dụng &8/&7lagg {name}
+command.error.onlyForPlayer()=&cLệnh này chỉ có thể được sử dụng bởi người chơi!
+
+##]-> /lagg
+command.lagg.nopermission()=&cBạn không có quyền sử dụng lệnh này!
+command.lagg.header()=&3-------------(&b&lLệnh Clearlag của bạn&3)-------------
+command.lagg.footer()=&3---------------------------------------- -----------
+command.lagg.helpline({name},{desc})= &4- &8/&3lagg &b{name} &f - {desc}
+
+##]-> /lagg quản trị viên
+command.admin.name()=admin
+command.admin.desc()=(Kiểm soát các mô-đun của Clearlag)
+command.admin.usage()=
+command.admin.enabledModules({moduleList})=&aĐã bật Mô-đun có thể tải lại: &7{moduleList}
+command.admin.noReloadableFields({module})={module} &ckhông chứa bất kỳ trường có thể tải lại nào!
+command.admin.notEnabled({module})=&cMô-đun này chưa được kích hoạt!
+command.admin.reload({module})=&aModule {module} đã được tải lại!
+command.admin.failedReload({module})=&cKhông thể tải lại mô-đun {module}
+command.admin.invalidModule({argument})=&cMô-đun không hợp lệ: {argument}
+command.admin.enabledModules({modules})=&aMô-đun đã bật: &7{modules}
+command.admin.stoppedModule({module})=&aModule {module} đã &cstopped&a!
+command.admin.startableModules({modules})=&aMô-đun có thể khởi động: &7{modules}
+command.admin.alreadyEnabled({module})=&cMô-đun này đã được kích hoạt!
+command.admin.enabled({module})=&aModule {module} đã được bật!
+command.admin.moduleStatus({listeners},{commands},{tasks},{modules})={
+&3=--------------[&6-&3] &b&lTrạng thái mô-đun &3[&6-&3]----------------=
+               &8[&7Gray = Đã tắt&8] &8[&aGreen = Đã bật&8]
+&6Listeners: {lệnh}
+&6Commands: {lệnh}
+&6Tasks: {task}
+&6Modules: {mô-đun}
+}
+command.admin.help()={
+&3=-----------------[&6-&3] &b&lLệnh mô-đun &3[&6-&3]--------------=
+&4 - &3/lagg admin &creload &b<module>
+&4 - &3/ lagg admin &cstop &b<module>
+&4 - &3/ lagg admin &cstart &b<module>
+&4 - &3/ lagg admin &clist
+&3------------------------------------------------- ----
+}
+
+##]-> /lagg area
+command.area.name()=khu vực
+command.area.usage()=<bán kính>
+command.area.desc()=(Xóa các thực thể khỏi bán kính của bạn)
+command.area.error({arg})=&4Đối số không hợp lệ được chỉ định&8: &c{arg}
+command.area.message({removed},{radius})=&6[&aClearLag&6] &3{removed} &bEntities đã bị xóa trong bán kính &3{bán kính}&b!
+
+##]-> /lagg checkchunk
+command.checkchunk.name()=kiểm tra các chunks
+command.checkchunk.usage()=
+command.checkchunk.desc()=(Hiển thị các thực thể của chunk)
+command.checkchunk.header()=&4*&3&m &8(&a&lThông tin Chunk&8)&3&m &4*
+command.checkchunk.tilelist()=&3 Thực thể cộng dồn&8:
+command.checkchunk.entitylist()=&3 Thực thể&8:
+command.checkchunk.line({count},{type})= &8- &ax{count} &7{type}
+command.checkchunk.footer()=&4*&3&m &4*
+
+##]-> / lagg check
+command.check.name()=kiểm tra
+command.check.usage()=[thế giới 1, thế giới 2...]
+command.check.desc()=(Đếm các thực thể trong (các) thế giới của bạn)
+command.check.invalidworld({arg})=&4Thế giới không hợp lệ được chỉ định&8: {arg}
+command.check.header()=&4*&3&m &8(&a&lTrạng thái máy chủ&8)&3&m &4*
+command.check.printed({removed1},{mobs},{animals},{players},{chunks},{activehoppers},{inactivehoppers},{spawners},{uptime},{tps},{usedmemory}, {maxmemory},{freememory})={
+&3 Vật phẩm trên mặt đất: &b{removed1}
+&3 Mob còn sống: &b{mobs}
+&3 Mob thân thiện còn sống: &b{animals}
+&3 Người chơi còn sống: &b{players}
+&3 Khối đã được tải: &b{chunks}
+&3 Phễu đang hoạt động: &b{activehoppers}
+&3 Phễu không hoạt động: &b{phễu không hoạt động}
+&3 Người sinh sản mob đang hoạt động: &b{người sinh sản}
+&3 Thời gian hoạt động: &b{uptime}
+&3 TPS hiện tại: &b{tps}
+&3 Mức sử dụng RAM: &b{usedmemory}&7/&b{maxmemory} &7MB
+&3 Bộ nhớ trống: &b{freememory} &7MB
+}
+command.check.footer()=&4*&3&m &4*
+
+##]-> /lagg chunk
+command.chunk.name()=chunk
+command.chunk.usage()=[list-size]
+command.chunk.desc()=(Tìm các đoạn có độ trễ)
+command.chunk.header()=&7&m &7( &bChuỗi lớn nhất &7)&m "
+command.chunk.print({order},{world},{x},{z},{count})=&4{order}&7) &3World: &b{world} &3x: &b{x} &3z: &b{z } &3Thực thể: &b{count}
+
+##]-> /lagg clear
+command.clear.name()=clear
+command.clear.usage()=
+command.clear.desc()=(Xóa các thực thể khỏi thế giới của bạn)
+lệnh.clear.message({count})=&6[&aClearLag&6] &a&bBạn vừa xóa &3{count}&b thực thể!
+
+##]-> /lagg gc
+command.gc.name()=gc
+command.gc.usage()=
+command.gc.desc()=(Yêu cầu trình thu gom rác)
+command.gc.message()=&6[&aClearLag&6] &a&bYêu cầu thu gom rác ngay lập tức! &7(Cảnh báo: Máy ảo của Java sẽ tự động giải phóng bộ nhớ một cách hiệu quả. Chỉ sử dụng lệnh này để gỡ lỗi hoặc buộc xóa một đống lớn)
+
+##]-> /lagg halt
+command.halt.name()=halt
+command.halt.usage()=[bật/tắt]
+command.halt.desc()=(Tạm dừng hầu hết hoạt động của máy chủ)
+command.halt.halted()=&6[&aClearLag&6] &a&bHoạt động của máy chủ đã &chalted&b!
+command.halt.unhalted()=&6[&aClearLag&6] &a&aHoạt động của máy chủ không còn bị tạm dừng nữa!
+
+##]-> /lagg killmob
+command.killmobs.name()=killmobs
+command.killmobs.usage()=
+command.killmobs.desc()=(Xóa mob khỏi thế giới của bạn)
+command.killmobs.message({count})=&6[&aClearLag&6] &a&3{count} &bMob đã bị xóa!
+
+##]-> /lagg profile
+command.profile.name()=profile
+command.profile.usage()=<sample-seconds> <sample-type>
+command.profile.desc()=(Các sự kiện gây ra độ trễ của hồ sơ)
+command.profile.invalidtime({arg})=&4Thời gian mẫu không hợp lệ được chỉ định&8: &c{arg}
+command.profile.invalidprofiler({arg},{profilers})={
+&4Trình phân tích hồ sơ không hợp lệ được chỉ định&8: &c{arg}
+&cTrình phân tích hợp lệ&8: &7{trình phân tích hồ sơ}
+}
+command.profile.nosamples()=&cKhông có mẫu nào được ghi lại trong thời gian lấy mẫu
+command.profile.header()=&7&m &7( &bChunk Mẫu &7)&m
+command.profile.line({listing},{world},{x},{z},{samples})=&4{listing}&7) &3World: &b{world}&7, &3x: &b{x}&7, &3z : &b{z} &3Kích thước mẫu: &b{mẫu}
+command.profile.started({time})=&6[&aClearLag&6] &aProfiler đã khởi động, chạy trong &7{time} &aseconds
+
+##]-> /lagg reload
+command.reload.name()=tải lại
+lệnh.reload.usage()=
+command.reload.desc()=(Tải lại Clearlag)
+command.reload.begin()=&6[&aClearLag&6] &bĐang tải lại mô-đun...
+command.reload.successful()=&6[&aClearLag&6] &bMô-đun đã được tải lại!
+
+##]-> /lagg samplememory
+command.samplememory.name()=samplememory
+command.samplememory.usage()=<sample-seconds>
+command.samplememory.desc()=(Bộ nhớ mẫu/Cách sử dụng GC)
+command.samplememory.invalidinteger({arg})=&4Số nguyên không hợp lệ được chỉ định&8: &c{arg}
+command.samplememory.begin({time})=&aChạy bộ lấy mẫu bộ nhớ trong &7{time} &aseconds
+command.samplememory.header()=&4*&3&m &8(&a&lSố liệu thống kê đánh dấu bộ nhớ&8)&3&m &4*
+command.samplememory.memory({high},{average})={
+&aBộ nhớ (Tính bằng MB):
+&3 Mức sử dụng bộ nhớ cao nhất trên mỗi tích tắc: &b{high}
+&3 Mức sử dụng bộ nhớ trung bình trên mỗi tích tắc: &b{average}
+}
+command.samplememory.gc({total},{highest},{lowest},{averagetime},{averageticks})={
+&aTrình thu gom rác (Dựa trên số tích tắc, tính bằng mili giây):
+&3 Tổng số bộ sưu tập GC (Theo đánh dấu): &b{total}
+&3 Thời gian thu gom rác cao nhất: &b{cao nhất}
+&3 Thời gian thu gom rác thấp nhất: &b{thấp nhất}
+&3 Thời gian thu gom rác trung bình: &b{averagetime}
+&3 Số lần đánh giá trung bình giữa các bộ sưu tập: &b{averageticks}
+}
+command.samplememory.notenoughtime()=&cThời gian lấy mẫu không đủ dài để có kết quả thu gom rác
+
+##]-> /lagg sampleticks
+command.sampleticks.name()=sampleticks
+command.sampleticks.usage()=[ticksToSample] [raw/stats]
+command.sampleticks.desc()=(Mẫu dấu tích của máy chủ của bạn)
+command.sampleticks.start({threadname},{time})=&aĐã bắt đầu lấy mẫu toàn bộ dấu tích trên luồng &7{threadname} &afor &7{time} &aticks &7(Ước tính, không chính xác 100%)
+command.sampleticks.rawheader()=&cThời gian đánh dấu thô: &7(Tick bình thường nằm trong khoảng thời gian từ 0-50 mili giây)
+command.sampleticks.rawprint({time})=&8 - {time}
+command.sampleticks.print({large},{small},{average},{spike})={
+&aSố liệu thống kê đánh dấu: &7(Tick bình thường nằm trong khoảng thời gian từ 0-50 mili giây)
+&3 Dấu tích lớn nhất: {large}
+&3 Dấu tích nhỏ nhất: {small}
+&3 Đánh dấu trung bình: {average}
+&3 gai: {spike}
+}
+
+##]-> /lagg tpchunk
+command.tpchunk.name()=tpchunk
+command.tpchunk.usage()=<x> <z> [thế giới]
+command.tpchunk.desc()=(Dịch chuyển tới các đoạn)
+command.tpchunk.begin()=&6[&aClearLag&6] &bĐang tải lại mô-đun...
+command.tpchunk.successful()=&6[&aClearLag&6] &bModules đã được tải lại!
+command.tpchunk.invalidinteger({arg})=&4Số nguyên không hợp lệ được chỉ định&8: &c{arg}
+command.tpchunk.invalidworld({arg})=&4Thế giới không tồn tại&8: &c{arg}
+command.tpchunk.teleported({x},{z})=&6[&aClearLag&6] &bDịch chuyển tới chunk: &3{x}&7, &3{z}
+
+##]-> /lagg tps
+command.tps.name()=tps
+command.tps.usage()=
+command.tps.desc()=(Hiển thị tốc độ đánh dấu trung bình của máy chủ)
+command.tps.print({tps})=&6[&aClearLag&6] &a{tps}
+
+##]-> /lagg sampleticks
+command.unloadchunks.name()=unloadchunks
+command.unloadchunks.usage()=
+command.unloadchunks.desc()=(Ngừng tải các đoạn khúc không sử dụng)
+command.unloadchunks.print({chunks})=&6[&aClearLag&6] &3{chunks} &bchunks đã ngừng tải!
+
+##]-> /lagg memory
+command.memory.name()=bộ nhớ
+command.memory.usage()=[tick-rate]
+command.memory.desc()=(Xem thông tin Heap)
+command.memory.message()=&3Bắt đầu lấy mẫu vùng heap JVM trên vùng bộ nhớ được liệt kê
+command.memory.invalidinteger({arg})=&4Tỷ lệ thăm dò không hợp lệ được chỉ định&8: &c{arg}
+
+##]-> /lagg performance
+lệnh.hiệu suất.name()=hiệu suất
+command.performance.usage()=[tick-rate]
+command.performance.desc()=(Xem hiệu suất máy chủ)
+command.performance.message()=&3Đã bắt đầu lấy mẫu luồng (Thêm &1sleep&3 thì tốt hơn!)
+command.performance.invalidinteger({arg})=&4Tỷ lệ thăm dò không hợp lệ được chỉ định&8: &c{arg}
